@@ -72,6 +72,7 @@ public class MySQLAdsDao implements Ads {
         return ads;
     }
 
+
     //    searchAds
     @Override
     public List<Ad> searchAdsFromResults(String searchInput) throws SQLException {
@@ -86,4 +87,6 @@ public class MySQLAdsDao implements Ads {
             throw new RuntimeException("No ads match your search.", e);
         }
     }
+
+
 }
