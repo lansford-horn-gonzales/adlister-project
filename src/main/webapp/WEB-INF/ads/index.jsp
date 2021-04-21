@@ -10,15 +10,26 @@
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 
 <div class="container">
-    <h1>Here Are all the ads!</h1>
+    <h2>Here are all the ads!</h2>
+    <p>Feel free to browse these great deals: </p>
 
     <c:forEach var="ad" items="${ads}">
-        <div class="col-md-6">
-            <h2>${ad.title}</h2>
-            <p>${ad.description}</p>
+    <div class="card col-md-6">
+        <div class="card-body">
+            <h4 class="card-title">${ad.title}</h4>
+            <p class="card-text">${ad.description}</p>
+            <a href="#" class="card-link">Edit</a>
+            <a href="#" onclick="myFunction()" class="card-link">Delete</a>
         </div>
+    </div>
     </c:forEach>
 </div>
+
+<script>
+    function myFunction() {
+        alert("I am an alert box!");
+    }
+</script>
 
 </body>
 </html>
