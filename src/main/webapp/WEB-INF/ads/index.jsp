@@ -27,7 +27,7 @@
 
 <script>
     function myFunction() {
-        alert("I am an alert box!");
+        alert("Delete ad?");
     }
 </script>
 
