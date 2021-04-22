@@ -6,8 +6,8 @@
         </div>
 
         <div class="search-container">
-            <form class="form-inline" method="post" action="/ads/search">
-                <input id="search" name="search" type="text" placeholder="Search.." >
+            <form class="form-inline" action="/ads/search" method="post">
+                <input id="search" name="search" type="text">
                 <button type="submit">Submit</button>
             </form>
         </div>
