@@ -88,5 +88,4 @@ public class MySQLAdsDao implements Ads {
             throw new RuntimeException("No ads match your search.", e);
         }
     }
-
 }
