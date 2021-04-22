@@ -12,9 +12,9 @@ public class MySQLUsersDao implements Users {
         try {
             DriverManager.registerDriver(new Driver());
             connection = DriverManager.getConnection(
-                config.getUrl(),
-                config.getUsername(),
-                config.getPassword()
+                    config.getUrl(),
+                    config.getUsername(),
+                    config.getPassword()
             );
         } catch (SQLException e) {
             throw new RuntimeException("Error connecting to the database!", e);
@@ -52,15 +52,28 @@ public class MySQLUsersDao implements Users {
     }
 
     private User extractUser(ResultSet rs) throws SQLException {
-        if (! rs.next()) {
+        if (!rs.next()) {
             return null;
         }
         return new User(
-            rs.getLong("id"),
-            rs.getString("username"),
-            rs.getString("email"),
-            rs.getString("password")
+                rs.getLong("id"),
+                rs.getString("username"),
+                rs.getString("email"),
+                rs.getString("password")
         );
     }
 
+    public void editUser(User oldUser, User newUser) throws SQLException {
+        String updateUserQuery = ("Update users set username = ? and email = ? where username ?");
+        try {
+            PreparedStatement stmt = connection.prepareStatement(updateUserQuery);
+            stmt.setString(1, newUser.getUsername());
+            stmt.setString(2, newUser.getEmail());
+            stmt.setString(3, oldUser.getUsername());
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException("Can't update profile", e);
+        }
+    }
 }
+
