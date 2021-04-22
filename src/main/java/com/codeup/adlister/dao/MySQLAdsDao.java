@@ -77,16 +77,16 @@ public class MySQLAdsDao implements Ads {
     @Override
     public List<Ad> searchAdsFromResults(String searchInput) throws SQLException {
         try {
-            String searchQuery = "SELECT * FROM ads WHERE title AND description LIKE ?";
-            String searchQueryPlus = "% " + searchInput + " %";
+            String searchQuery = "SELECT * FROM ads WHERE title LIKE ? OR description LIKE ?";
+            String searchQueryPlus = "%" + searchInput + "%";
             PreparedStatement stmt = connection.prepareStatement(searchQuery);
             stmt.setString(1, searchQueryPlus);
+            stmt.setString(2, searchQueryPlus);
             ResultSet rs = stmt.executeQuery();
             return createAdsFromResults(rs);
         } catch (SQLException e) {
             throw new RuntimeException("No ads match your search.", e);
         }
     }
-
 
 }
