@@ -19,12 +19,12 @@
     <h1>Edit Profile</h1>
     <form action="/edit-profile" method="post">
         <div class="form-group">
-            <label for="Username">Username</label>
-            <input id="Username" name="username" class="form-control" type="text">
+            <label for="username">New Username</label>
+            <input id="username" name="username" class="form-control" type="text">
         </div>
         <div class="form-group">
-            <label for="Email">Email</label>
-            <input id="Email" name="Email" class="form-control" type="text"></input>
+            <label for="email">New Email</label>
+            <input id="email" name="email" class="form-control" type="text"></input>
         </div>
         <input type="submit" class="btn btn-block btn-primary">
     </form>

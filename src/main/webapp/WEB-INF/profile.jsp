@@ -17,13 +17,19 @@
             <h2>Profile</h2>
         </div>
         <ul class="list-group list-group-flush">
-            Username:<li class="list-group-item">${sessionScope.user.username}</li>
+<%--            <form action="/edit-profile" method="get">--%>
+<%--                <input type="hidden" name="userId" value="${user.id}">--%>
+<%--            </form>--%>
+            Username:
+            <li class="list-group-item">${sessionScope.user.username}</li>
             <br>
             <br>
-            Email:<li class="list-group-item">${sessionScope.user.email}</li>
+            Email:
+            <li class="list-group-item">${sessionScope.user.email}</li>
             <br>
             <br>
-            Password:<li class="list-group-item">*************</li>
+            Password:
+            <li class="list-group-item">*************</li>
         </ul>
     </div>
 
