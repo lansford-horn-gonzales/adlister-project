@@ -51,6 +51,7 @@ public class MySQLUsersDao implements Users {
         }
     }
 
+
     private User extractUser(ResultSet rs) throws SQLException {
         if (!rs.next()) {
             return null;
@@ -62,7 +63,6 @@ public class MySQLUsersDao implements Users {
                 rs.getString("password")
         );
     }
-
 
 
 
@@ -80,6 +80,20 @@ public class MySQLUsersDao implements Users {
             throw new RuntimeException("Can't update profile", e);
         }
     }
+
+
+    public User findUserById(long id) {
+        String query = "SELECT * FROM users WHERE id = ? LIMIT 1";
+        try {
+            PreparedStatement stmt = connection.prepareStatement(query);
+            stmt.setLong(1, id);
+            return extractUser(stmt.executeQuery());
+        }catch (SQLException e) {
+            throw new RuntimeException("Can't find user by id", e);
+        }
+    }
+
+
 
 }
 
