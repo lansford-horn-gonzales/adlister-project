@@ -51,6 +51,9 @@ public class MySQLUsersDao implements Users {
         }
     }
 
+
+
+
     private User extractUser(ResultSet rs) throws SQLException {
         if (! rs.next()) {
             return null;
@@ -61,6 +64,24 @@ public class MySQLUsersDao implements Users {
             rs.getString("email"),
             rs.getString("password")
         );
+    }
+
+    public User deleteUser(User userID) throws SQLException {
+        try {
+            String query = "DELETE FROM user WHERE id=?";
+            String deleteUserByID = "%" + userID + "%";
+            PreparedStatement stmt = connection.prepareStatement(query);
+            stmt.setString(1, deleteUserByID);
+            ResultSet rs = stmt.executeQuery();
+            return extractUser(rs);
+        } catch (SQLException e) {
+            throw new RuntimeException("No user match.", e);
+        }
+    }
+
+    @Override
+    public Long deleteUser(long userId) {
+        return null;
     }
 
 }
