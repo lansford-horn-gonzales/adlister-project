@@ -64,8 +64,12 @@ public class MySQLUsersDao implements Users {
         );
     }
 
-    public void editUser(User oldUser, User newUser) {
-        String updateUserQuery = ("Update users set username = ? and email = ? where username = ?");
+
+
+
+
+    public void editUser(User oldUser, User newUser) throws SQLException {
+        String updateUserQuery = ("Update users set username = ? and email = ? where username ?");
         try {
             PreparedStatement stmt = connection.prepareStatement(updateUserQuery);
             stmt.setString(1, newUser.getUsername());
@@ -77,6 +81,7 @@ public class MySQLUsersDao implements Users {
         }
     }
 
+
     public User findUserById(long id) {
         String query = "SELECT * FROM users WHERE id = ? LIMIT 1";
         try {
@@ -87,6 +92,7 @@ public class MySQLUsersDao implements Users {
             throw new RuntimeException("Can't find user by id", e);
         }
     }
+
 
 
 }
