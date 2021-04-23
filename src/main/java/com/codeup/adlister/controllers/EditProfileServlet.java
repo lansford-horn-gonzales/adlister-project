@@ -17,7 +17,7 @@ public class EditProfileServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 
-        long userId = Long.parseLong(request.getParameter("userId"));
+        long userId = Long.parseLong(request.getParameter("editUser"));
         try {
             request.setAttribute("user", DaoFactory.getUsersDao().findUserById(userId));
         } catch (SQLException exception) {
@@ -41,7 +41,7 @@ public class EditProfileServlet extends HttpServlet {
         } catch (SQLException exception) {
             exception.printStackTrace();
         }
-
+        request.getSession().setAttribute("user", editUser);
         response.sendRedirect("/profile");
     }
 }

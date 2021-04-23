@@ -77,7 +77,7 @@ public class MySQLUsersDao implements Users {
 
 
     public void editUser(User oldUser, User newUser) throws SQLException {
-        String updateUserQuery = ("Update users set username = ? and email = ? where username ?");
+        String updateUserQuery = ("Update users set username = ?, email = ? where username = ?");
         try {
             PreparedStatement stmt = connection.prepareStatement(updateUserQuery);
             stmt.setString(1, newUser.getUsername());
