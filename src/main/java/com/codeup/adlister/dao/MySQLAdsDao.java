@@ -63,7 +63,6 @@ public class MySQLAdsDao implements Ads {
         } catch (SQLException e) {
             throw new RuntimeException("Error deleting ad.");
         }
-
     }
 
     private Ad extractAd(ResultSet rs) throws SQLException {

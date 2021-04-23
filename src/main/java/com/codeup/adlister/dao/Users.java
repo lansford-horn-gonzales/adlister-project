@@ -12,4 +12,5 @@ public interface Users {
     void editUser(User username, User username1) throws SQLException;
     User findUserById(long id) throws SQLException;
 
+    void deleteUser(long userId);
 }
