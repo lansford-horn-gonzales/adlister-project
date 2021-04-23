@@ -66,7 +66,7 @@ public class MySQLUsersDao implements Users {
         );
     }
 
-<<<<<<< HEAD
+
     public User deleteUser(long userID){
         try {
             String query = "DELETE FROM user WHERE id=?";
@@ -81,8 +81,8 @@ public class MySQLUsersDao implements Users {
     }
 
 
-}
-=======
+
+
 
 
 
@@ -103,4 +103,3 @@ public class MySQLUsersDao implements Users {
 
 }
 
->>>>>>> main
