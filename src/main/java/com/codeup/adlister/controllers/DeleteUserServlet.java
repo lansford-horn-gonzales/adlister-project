@@ -1,4 +1,4 @@
-package com.codeup.adlister.controllers;
+//package com.codeup.adlister.controllers;
 
 import com.codeup.adlister.dao.DaoFactory;
 import com.codeup.adlister.models.User;
@@ -12,12 +12,13 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-@WebServlet(name = "DeleteAdServlet", urlPatterns = "/register")
-public class DeleteUserServlet extends HttpServlet {
-    protected void doPost(HttpServlet request, HttpServletResponse response) throws IOException {
-        long userId = (User)request.getParameter();
-
-        DaoFactory.getUsersDao().deleteUser(userId);
-        response.sendRedirect("/register");
-    }
-}
+//@WebServlet(name = "DeleteAdServlet", urlPatterns = "/register")
+//public class DeleteUserServlet extends HttpServlet {
+//    protected void doPost(HttpServlet request, HttpServletResponse response) throws IOException {
+//        long userId = (User)request.getParameter();
+//
+//        DaoFactory.getUsersDao().deleteUser(userId);
+//        response.sendRedirect("/register");
+//    }
+//}
+//}
