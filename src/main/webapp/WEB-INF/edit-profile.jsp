@@ -24,11 +24,10 @@
         </div>
         <div class="form-group">
             <label for="email">New Email</label>
-            <input id="email" name="email" class="form-control" type="text"></input>
+            <input id="email" name="email" class="form-control" type="text">
         </div>
         <input type="submit" class="btn btn-block btn-primary">
     </form>
 </div>
-
 </body>
 </html>

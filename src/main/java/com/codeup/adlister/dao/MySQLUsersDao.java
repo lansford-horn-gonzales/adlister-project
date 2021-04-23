@@ -51,7 +51,6 @@ public class MySQLUsersDao implements Users {
         }
     }
 
-
     private User extractUser(ResultSet rs) throws SQLException {
         if (!rs.next()) {
             return null;
@@ -65,7 +64,16 @@ public class MySQLUsersDao implements Users {
     }
 
 
-
+    public void deleteUser(long userID){
+        try {
+            String query = "DELETE FROM users WHERE id=?";
+            PreparedStatement stmt = connection.prepareStatement(query);
+            stmt.setLong(1, userID);
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException("No user match.", e);
+        }
+    }
 
 
     public void editUser(User oldUser, User newUser) throws SQLException {
@@ -92,8 +100,6 @@ public class MySQLUsersDao implements Users {
             throw new RuntimeException("Can't find user by id", e);
         }
     }
-
-
 
 }
 
