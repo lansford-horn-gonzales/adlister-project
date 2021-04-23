@@ -63,6 +63,11 @@ public class MySQLUsersDao implements Users {
         );
     }
 
+
+
+
+
+
     public void editUser(User oldUser, User newUser) throws SQLException {
         String updateUserQuery = ("Update users set username = ? and email = ? where username ?");
         try {
@@ -75,5 +80,6 @@ public class MySQLUsersDao implements Users {
             throw new RuntimeException("Can't update profile", e);
         }
     }
+
 }
 
