@@ -66,7 +66,7 @@ public class MySQLUsersDao implements Users {
         );
     }
 
-    public User deleteUser(User userID) throws SQLException {
+    public User deleteUser(long userID){
         try {
             String query = "DELETE FROM user WHERE id=?";
             String deleteUserByID = "%" + userID + "%";
@@ -79,9 +79,5 @@ public class MySQLUsersDao implements Users {
         }
     }
 
-    @Override
-    public Long deleteUser(long userId) {
-        return null;
-    }
 
 }

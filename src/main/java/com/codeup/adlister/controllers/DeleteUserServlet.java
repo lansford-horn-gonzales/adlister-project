@@ -15,7 +15,8 @@ import java.sql.SQLException;
 @WebServlet(name = "DeleteAdServlet", urlPatterns = "/register")
 public class DeleteUserServlet extends HttpServlet {
     protected void doPost(HttpServlet request, HttpServletResponse response) throws IOException {
-        long userId = Long.parseLong(request.getInitParameter("userId"));
+        long userId = (User)request.getParameter();
+
         DaoFactory.getUsersDao().deleteUser(userId);
         response.sendRedirect("/register");
     }
