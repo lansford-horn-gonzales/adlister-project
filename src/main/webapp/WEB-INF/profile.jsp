@@ -38,5 +38,24 @@
 </div>
 
 
+    <div class="card">
+        <div class="card-header">
+            <h2>Profile</h2>
+        </div>
+        <ul class="list-group list-group-flush">
+            Username:<li class="list-group-item">${sessionScope.user.username}</li>
+            <br>
+            <br>
+            Email:<li class="list-group-item">${sessionScope.user.email}</li>
+            <br>
+            <br>
+            Password:<li class="list-group-item">*************</li>
+        </ul>
+    </div>
+
+    <div align="center">
+        <button><a href="/edit-profile">Edit Profile</a></button>
+    </div>
+
 </body>
 </html>
