@@ -18,23 +18,17 @@
         <div class="card-body">
             <h4 class="card-title">${ad.title}</h4>
             <p class="card-text">${ad.description}</p>
-            <a href="#" class="card-link">Edit</a>
+<%--            <a href="#" class="card-link">Edit</a>--%>
 
-            <form action="/ads/delete" method="post">
-                <input type="hidden" name="id" value="${ad.id}">
-                <button class="btn btn-danger">Delete</button>
-            </form>
+<%--            <form action="/ads/delete" method="post">--%>
+<%--                <input type="hidden" name="id" value="${ad.id}">--%>
+<%--                <button class="btn btn-danger">Delete</button>--%>
+<%--            </form>--%>
 
         </div>
     </div>
     </c:forEach>
 </div>
-
-<%--<script>--%>
-<%--    function myFunction() {--%>
-<%--        alert("Delete ad?");--%>
-<%--    }--%>
-<%--</script>--%>
 
 </body>
 </html>
