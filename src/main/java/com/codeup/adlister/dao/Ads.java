@@ -13,4 +13,8 @@ public interface Ads {
     void delete(long adId);
     List<Ad> searchAdsFromResults(String searchAds) throws SQLException;
 
+    Ad findAdById(long id) throws SQLException;
+    void editAd(Ad oldAd, Ad newAd) throws SQLException;
+    List<Ad> searchAdsByUser(long id);
+
 }

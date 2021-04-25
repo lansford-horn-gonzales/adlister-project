@@ -1,7 +1,10 @@
 package com.codeup.adlister.dao;
+
 import com.codeup.adlister.models.User;
 import com.mysql.cj.jdbc.Driver;
+
 import java.sql.*;
+
 public class MySQLUsersDao implements Users {
     private Connection connection;
 
@@ -17,6 +20,7 @@ public class MySQLUsersDao implements Users {
             throw new RuntimeException("Error connecting to the database!", e);
         }
     }
+
 
     @Override
     public User findByUsername(String username) {
@@ -59,6 +63,19 @@ public class MySQLUsersDao implements Users {
         );
     }
 
+
+    public void deleteUser(long userID){
+        try {
+            String query = "DELETE FROM users WHERE id=?";
+            PreparedStatement stmt = connection.prepareStatement(query);
+            stmt.setLong(1, userID);
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException("No user match.", e);
+        }
+    }
+
+
     public void editUser(User oldUser, User newUser) throws SQLException {
         String updateUserQuery = ("Update users set username = ?, email = ? where username = ?");
         try {
@@ -72,27 +89,17 @@ public class MySQLUsersDao implements Users {
         }
     }
 
-    public void deleteUser(long userID) {
-        try {
-            String query = "DELETE FROM users WHERE id=?";
-            PreparedStatement stmt = connection.prepareStatement(query);
-            stmt.setLong(1, userID);
-            stmt.executeUpdate();
-        } catch (SQLException e) {
-            throw new RuntimeException("No user match.", e);
-        }
-    }
-
 
     public User findUserById(long id) {
-        String query = "SELECT * FROM users WHERE id = ? LIMIT 1";
+        String query = ("SELECT * FROM users WHERE id = ? LIMIT 1");
         try {
             PreparedStatement stmt = connection.prepareStatement(query);
             stmt.setLong(1, id);
             return extractUser(stmt.executeQuery());
-        } catch (SQLException e) {
+        }catch (SQLException e) {
             throw new RuntimeException("Can't find user by id", e);
         }
     }
+
 }
 
