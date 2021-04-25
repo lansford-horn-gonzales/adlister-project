@@ -20,10 +20,10 @@
             <p class="card-text">${ad.description}</p>
 
 
-            <form action="/edit-ads" method="get">
-                <input type="hidden" name="editAd" value="${ad.id}">
-                <button class="btn btn-primary">Edit</button>
-            </form>
+<%--            <form action="/edit-ads" method="get">--%>
+<%--                <input type="hidden" name="editAd" value="${ad.id}">--%>
+<%--                <button class="btn btn-primary">Edit</button>--%>
+<%--            </form>--%>
 
 
 <%--            <form action="/ads/delete" method="post">--%>

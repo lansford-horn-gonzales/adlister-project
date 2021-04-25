@@ -27,6 +27,11 @@
                     <button class="btn btn-danger">Delete</button>
                 </form>
 
+                <form action="/edit-ads" method="get">
+                    <input type="hidden" name="editAd" value="${ad.id}">
+                    <button class="btn btn-primary">Edit</button>
+                </form>
+
             </div>
         </div>
     </c:forEach>

@@ -124,8 +124,10 @@ public class MySQLAdsDao implements Ads {
             }
             return null;
         } catch (SQLException e) {
-            throw  new RuntimeException("Can't find ad by id", e);
-          
+            throw new RuntimeException("Can't find ad by id", e);
+        }
+    }
+
     @Override
     public List<Ad> searchAdsByUser(long id) {
         PreparedStatement stmt = null;
