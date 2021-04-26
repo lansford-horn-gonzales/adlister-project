@@ -21,6 +21,10 @@
     <h1>Create a new Ad</h1>
     <form action="/edit-ads" method="post">
         <div class="form-group">
+            <label for="image">Image</label>
+            <textarea id="image" name="image" class="form-control" type="text"></textarea>
+        </div>
+        <div class="form-group">
             <label for="title">Title</label>
             <input id="title" name="title" class="form-control" type="text">
         </div>

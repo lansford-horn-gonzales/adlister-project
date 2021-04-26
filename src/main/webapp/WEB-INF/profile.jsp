@@ -20,6 +20,7 @@
     <c:forEach var="ad" items="${ads}">
         <div class="card col-md-6">
             <div class="card-body">
+                <img class="card-img-top" src="${ad.image}" width="300" alt="unicorn">
                 <h4 class="card-title">${ad.title}</h4>
                 <p class="card-text">${ad.description}</p>
 <%--                <a href="#" class="card-link">Edit</a>--%>
