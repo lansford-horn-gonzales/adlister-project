@@ -14,9 +14,9 @@ CREATE TABLE users (
 CREATE TABLE ads (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
     user_id INT UNSIGNED NOT NULL,
-    image VARCHAR(75) NOT NULL,
-    title VARCHAR(240) NOT NULL,
-    description TEXT NOT NULL,
+    image VARCHAR(250),
+    title VARCHAR(240),
+    description TEXT,
     PRIMARY KEY (id),
     FOREIGN KEY (user_id) REFERENCES users(id)
         ON DELETE CASCADE

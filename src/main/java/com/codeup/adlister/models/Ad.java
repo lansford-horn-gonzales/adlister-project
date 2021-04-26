@@ -15,7 +15,30 @@ public class Ad {
         this.description = description;
     }
 
-    public Ad(long id, String image, String title, String description) {
+//    Ad ad = new Ad(
+
+//            user.getId(),
+//            request.getParameter("image"),
+//            request.getParameter("title"),
+//            request.getParameter("description")
+//    );
+
+    public Ad(long userId, String image, String title, String description) {
+        this.userId = userId;
+        this.image = image;
+        this.title = title;
+        this.description = description;
+    }
+
+    @Override
+    public String toString() {
+        return "Ad{" +
+                "id=" + id +
+                ", userId=" + userId +
+                ", image='" + image + '\'' +
+                ", title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                '}';
     }
 
     public long getId() {
