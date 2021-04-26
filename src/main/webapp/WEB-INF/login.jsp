@@ -21,6 +21,7 @@
             </div>
             <input type="submit" class="btn btn-primary btn-block" value="Log In">
 <%--            add hidden input for the redirect--%>
+            <input type="hidden" value="${redirect}" name="redirect">
         </form>
 
     </div>
