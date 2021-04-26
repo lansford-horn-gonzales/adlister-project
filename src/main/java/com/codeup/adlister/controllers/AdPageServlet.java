@@ -11,16 +11,16 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
 
-@WebServlet(name = "controllers.AdsIndexServlet", urlPatterns = "/show-ad")
+@WebServlet(name = "controllers.AdsPageServlet", urlPatterns = "/show-ad")
 public class AdPageServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        long adId = Long.parseLong(request.getParameter("selected-ad"));
+        long adId = Long.parseLong(request.getParameter("showAd"));
         try {
             request.setAttribute("ad", DaoFactory.getAdsDao().findAdById(adId));
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        request.getRequestDispatcher("/WEB-INF/ad-page.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/ads/ad-page.jsp").forward(request, response);
 
 
 //        String selectedAd = request.getParameter("selected-ad");
@@ -34,15 +34,5 @@ public class AdPageServlet extends HttpServlet {
 
 //        request.setAttribute("ads", DaoFactory.getAdsDao().findAdById(adID).getId());
 //        request.getRequestDispatcher("/WEB-INF/ads/index.jsp").forward(request, response);
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String image = request.getParameter("image");
-        String title = request.getParameter("title");
-        String description = request.getParameter("description");
-        long id = Long.parseLong(request.getParameter("id"));
-        Ad showAd = new Ad(id, image, title, description);
-        response.sendRedirect("/ad-page.jsp");
     }
 }
