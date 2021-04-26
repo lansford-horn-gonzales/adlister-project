@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat%7CRaleway");
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: fantasy;
+}
+body {
+    background-image: linear-gradient(aliceblue 30%, #7adcca , aliceblue, #7adcca);
+}
+
+
+
+
+
+/*footer {*/
+/*position: absolute;*/
+/*bottom: 0;*/
+/*width: 100%;*/
+/*}*/
+
+
+
+
+.btn {
+    border: none !important;
+}
+
