@@ -12,7 +12,7 @@ mySQL
 MVC
 HTML, custom CSS, and Bootstrap
 
-We set CRUD functionalities for both users and NFT's on our mySQL database, and the capability to use a search bar to search through the mySQL database of ads.
+We set CRUD (Create, Read, Update, and Delete) functionalities for both users and NFT's on our mySQL database, and the capability to use a search bar to search through the mySQL database of ads/NFT's.
 
 We thank you for visiting our github project page, feel free to check out our code!
 
