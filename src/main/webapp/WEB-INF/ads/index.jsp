@@ -16,6 +16,7 @@
     <c:forEach var="ad" items="${ads}">
     <div class="card col-md-6">
         <div class="card-body">
+            <div class="img">${ad.image}</div>
             <h4 class="card-title">${ad.title}</h4>
             <p class="card-text">${ad.description}</p>
 

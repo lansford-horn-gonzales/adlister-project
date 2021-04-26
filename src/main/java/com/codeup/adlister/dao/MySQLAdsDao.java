@@ -38,11 +38,12 @@ public class MySQLAdsDao implements Ads {
     @Override
     public Long insert(Ad ad) {
         try {
-            String insertQuery = "INSERT INTO ads(user_id, title, description) VALUES (?, ?, ?)";
+            String insertQuery = "INSERT INTO ads(user_id, image, title, description) VALUES (?, ?, ?, ?)";
             PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
             stmt.setLong(1, ad.getUserId());
-            stmt.setString(2, ad.getTitle());
-            stmt.setString(3, ad.getDescription());
+            stmt.setString(2, ad.getImage());
+            stmt.setString(3, ad.getTitle());
+            stmt.setString(4, ad.getDescription());
             stmt.executeUpdate();
             ResultSet rs = stmt.getGeneratedKeys();
             rs.next();
@@ -69,6 +70,7 @@ public class MySQLAdsDao implements Ads {
         return new Ad(
                 rs.getLong("id"),
                 rs.getLong("user_id"),
+                rs.getString("image"),
                 rs.getString("title"),
                 rs.getString("description")
         );
@@ -101,12 +103,13 @@ public class MySQLAdsDao implements Ads {
 
 
     public void editAd(Ad oldAd, Ad newAd) throws SQLException {
-        String updateQuery = ("update ads set title = ?, description = ? where title = ?");
+        String updateQuery = ("update ads set image = ?, title = ?, description = ? where title = ?");
         try {
             PreparedStatement stmt = connection.prepareStatement(updateQuery);
-            stmt.setString(1, newAd.getTitle());
-            stmt.setString(2, newAd.getDescription());
-            stmt.setString(3, oldAd.getTitle());
+            stmt.setString(1, newAd.getImage());
+            stmt.setString(2, newAd.getTitle());
+            stmt.setString(3, newAd.getDescription());
+            stmt.setString(4, oldAd.getTitle());
             stmt.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException("Can't update ad", e);

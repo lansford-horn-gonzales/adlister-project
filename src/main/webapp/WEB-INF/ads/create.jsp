@@ -10,8 +10,12 @@
 <jsp:include page="/WEB-INF/partials/login-navbar.jsp"/>
 
 <div class="container">
-        <h1>Create a new Ad</h1>
+        <h1>Insert a new NFT</h1>
         <form action="/ads/create" method="post">
+            <div class="form-group">
+                <label for="image">Image</label>
+                <input id="image" name="image" class="form-control" type="text">
+            </div>
             <div class="form-group">
                 <label for="title">Title</label>
                 <input id="title" name="title" class="form-control" type="text">

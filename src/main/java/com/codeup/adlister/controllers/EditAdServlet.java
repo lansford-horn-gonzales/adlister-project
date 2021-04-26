@@ -29,9 +29,9 @@ public class EditAdServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+        String image = request.getParameter("image");
         String title = request.getParameter("title");
         String description = request.getParameter("description");
-
 //        Ad oldAd = (Ad) request.getSession().getAttribute("ad");
         long id = Long.parseLong(request.getParameter("id"));
         Ad oldAd = null;
@@ -41,7 +41,7 @@ public class EditAdServlet extends HttpServlet {
             exception.printStackTrace();
         }
 
-        Ad editAd = new Ad(oldAd.getId(), title, description);
+        Ad editAd = new Ad(oldAd.getId(), image, title, description);
         try {
             DaoFactory.getAdsDao().editAd(oldAd, editAd);
         } catch (SQLException e) {
