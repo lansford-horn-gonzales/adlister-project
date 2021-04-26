@@ -1,0 +1,14 @@
+
+body {
+    font-family: "fantasy";
+    background-color: turquoise;
+    margin: 0;
+    color: coral;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    margin-top: 25px;
+}

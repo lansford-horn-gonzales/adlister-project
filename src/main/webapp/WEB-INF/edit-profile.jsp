@@ -11,6 +11,8 @@
     <jsp:include page="/WEB-INF/partials/head.jsp">
         <jsp:param name="title" value="Edit Profile" />
     </jsp:include>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+<%--    <link rel="stylesheet" type="text/css" href="css/edit-profile.css">--%>
 </head>
 <body>
 <jsp:include page="/WEB-INF/partials/login-navbar.jsp"/>
