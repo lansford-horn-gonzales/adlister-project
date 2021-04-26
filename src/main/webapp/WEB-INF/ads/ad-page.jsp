@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body>
-
+<jsp:include page="/WEB-INF/partials/login-navbar.jsp"/>
 <div class="container">
     <h2>Welcome to ${ad.title}'s profile!</h2>
     <p>Read all about her:</p>
