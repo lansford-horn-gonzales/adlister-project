@@ -6,7 +6,7 @@
     font-family: fantasy;
 }
 body {
-    background-image: linear-gradient(#7adcca 30%, #98989A);
+    background-image: linear-gradient(aliceblue 30%, #7adcca , aliceblue, #7adcca);
 }
 
 
