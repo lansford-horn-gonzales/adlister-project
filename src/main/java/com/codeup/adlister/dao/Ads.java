@@ -17,4 +17,5 @@ public interface Ads {
     void editAd(Ad oldAd, Ad newAd) throws SQLException;
     List<Ad> searchAdsByUser(long id);
 
+
 }

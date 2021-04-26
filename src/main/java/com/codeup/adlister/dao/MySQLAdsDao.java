@@ -145,4 +145,17 @@ public class MySQLAdsDao implements Ads {
 
         }
     }
+
+//    public Ad adPageDisplayOneAd(long id) {
+//        String query = ("SELECT * FROM ads WHERE id = ?");
+//        try {
+//            PreparedStatement stmt = connection.prepareStatement(query);
+//            stmt.executeUpdate(String.valueOf(id));
+//            Ad ad = stmt.executeQuery(rs);
+//            return ad;
+//
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }
+//    }
 }
