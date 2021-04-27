@@ -16,7 +16,7 @@ import java.sql.SQLException;
 public class EditProfileServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-
+//Setting the value of adId into parameter of edit id.
         long userId = Long.parseLong(request.getParameter("editUser"));
         try {
             request.setAttribute("user", DaoFactory.getUsersDao().findUserById(userId));
