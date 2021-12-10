@@ -47,7 +47,7 @@ public class EditAdServlet extends HttpServlet {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        request.getSession().setAttribute("ad",editAd);
+        request.getSession().setAttribute("ad", editAd);
         response.sendRedirect("/ads");
     }
 }

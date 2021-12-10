@@ -64,7 +64,7 @@ public class MySQLUsersDao implements Users {
     }
 
 
-    public void deleteUser(long userID){
+    public void deleteUser(long userID) {
         try {
             String query = "DELETE FROM users WHERE id=?";
             PreparedStatement stmt = connection.prepareStatement(query);
@@ -96,7 +96,7 @@ public class MySQLUsersDao implements Users {
             PreparedStatement stmt = connection.prepareStatement(query);
             stmt.setLong(1, id);
             return extractUser(stmt.executeQuery());
-        }catch (SQLException e) {
+        } catch (SQLException e) {
             throw new RuntimeException("Can't find user by id", e);
         }
     }

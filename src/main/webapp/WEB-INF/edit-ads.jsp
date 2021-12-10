@@ -10,7 +10,7 @@
 <html>
 <head>
     <jsp:include page="/WEB-INF/partials/head.jsp">
-        <jsp:param name="title" value="Edit Ads" />
+        <jsp:param name="title" value="Edit Ads"/>
     </jsp:include>
     <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>

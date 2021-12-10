@@ -1,11 +1,11 @@
 
-*
-{
+* {
     /*margin:  0;*/
     /*padding: 0;*/
     /*box-sizing: border-box;*/
     font-family: fantasy;
 }
+
 .card-body {
     overflow: auto !important;
     border: 1px solid #f2f2f2;

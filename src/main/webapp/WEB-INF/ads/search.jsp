@@ -10,12 +10,12 @@
 <html>
 <head>
     <jsp:include page="/WEB-INF/partials/head.jsp">
-        <jsp:param name="title" value="Viewing All The Ads" />
+        <jsp:param name="title" value="Viewing All The Ads"/>
     </jsp:include>
     <title>Found Ads</title>
 </head>
 <body>
-<jsp:include page="/WEB-INF/partials/navbar.jsp" />
+<jsp:include page="/WEB-INF/partials/navbar.jsp"/>
 
 <div class="container">
     <h2>Ads matching your search...</h2>
@@ -26,6 +26,12 @@
             <div class="card-body">
                 <h4 class="card-title">${ad.title}</h4>
                 <p class="card-text">${ad.description}</p>
+                <!-- ryan added -->
+                <form action="/show-ad" method="get">
+                    <input type="hidden" name="showAd" value="${ad.id}">
+                    <button class="btn btn-primary">View Ad</button>
+                </form>
+                <!-- ryan added -->
             </div>
         </div>
     </c:forEach>

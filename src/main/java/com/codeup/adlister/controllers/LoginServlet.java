@@ -15,7 +15,7 @@ import java.io.IOException;
 public class LoginServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String redirect = request.getParameter("redirect");
-        request.setAttribute("redirect",redirect);
+        request.setAttribute("redirect", redirect);
 
         if (request.getSession().getAttribute("user") != null) {
             response.sendRedirect("/profile");
