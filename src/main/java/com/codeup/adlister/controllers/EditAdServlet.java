@@ -41,6 +41,7 @@ public class EditAdServlet extends HttpServlet {
             exception.printStackTrace();
         }
 
+        assert oldAd != null;
         Ad editAd = new Ad(oldAd.getId(), image, title, description);
         try {
             DaoFactory.getAdsDao().editAd(oldAd, editAd);
@@ -48,6 +49,6 @@ public class EditAdServlet extends HttpServlet {
             e.printStackTrace();
         }
         request.getSession().setAttribute("ad", editAd);
-        response.sendRedirect("/ads");
+        response.sendRedirect("/profile");
     }
 }
