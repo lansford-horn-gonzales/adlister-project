@@ -16,6 +16,7 @@
 </head>
 <body>
 <jsp:include page="/WEB-INF/partials/login-navbar.jsp"/>
+<%--This page displays the form for editing profile--%>
 <div class="container">
     <h1>Edit Profile</h1>
     <form action="/edit-profile" method="post">

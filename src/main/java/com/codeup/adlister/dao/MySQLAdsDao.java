@@ -101,7 +101,7 @@ public class MySQLAdsDao implements Ads {
         }
     }
 
-
+//Editing ad by using oldAd and inserting new info into new ad.
     public void editAd(Ad oldAd, Ad newAd) throws SQLException {
         String updateQuery = ("update ads set image = ?, title = ?, description = ? where title = ?");
         try {
@@ -115,7 +115,7 @@ public class MySQLAdsDao implements Ads {
             throw new RuntimeException("Can't update ad", e);
         }
     }
-
+//searching an ad by its id.
     public Ad findAdById(long id) {
         String query = ("select * from ads where id = ? limit 1");
         try {

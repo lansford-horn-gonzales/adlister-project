@@ -26,12 +26,18 @@
             <div class="card-body">
                 <h4 class="card-title">${ad.title}</h4>
                 <p class="card-text">${ad.description}</p>
+
                 <!-- ryan added -->
+
+
                 <form action="/show-ad" method="get">
                     <input type="hidden" name="showAd" value="${ad.id}">
                     <button class="btn btn-primary">View Ad</button>
                 </form>
+
                 <!-- ryan added -->
+
+
             </div>
         </div>
     </c:forEach>

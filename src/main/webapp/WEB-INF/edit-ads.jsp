@@ -16,7 +16,7 @@
 </head>
 <body>
 <jsp:include page="/WEB-INF/partials/login-navbar.jsp"/>
-
+<%--this page displays editing form page--%>
 <div class="container">
     <h1>Create a new Ad</h1>
     <form action="/edit-ads" method="post">
@@ -34,6 +34,7 @@
         </div>
         <input type="submit" class="btn btn-block btn-primary">
         <input type="hidden" name="id" value="${ad.id}">
+<%--        line 36 using the value to get the ad--%>
     </form>
 </div>
 </body>

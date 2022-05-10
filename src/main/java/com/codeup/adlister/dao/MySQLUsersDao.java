@@ -75,7 +75,7 @@ public class MySQLUsersDao implements Users {
         }
     }
 
-
+//Editing ad by using oldUser and inserting new info into new User.
     public void editUser(User oldUser, User newUser) throws SQLException {
         String updateUserQuery = ("Update users set username = ?, email = ? where username = ?");
         try {
@@ -89,7 +89,7 @@ public class MySQLUsersDao implements Users {
         }
     }
 
-
+//searching an User by its id.
     public User findUserById(long id) {
         String query = ("SELECT * FROM users WHERE id = ? LIMIT 1");
         try {
