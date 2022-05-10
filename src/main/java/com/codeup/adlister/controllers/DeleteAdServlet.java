@@ -15,10 +15,10 @@ import java.sql.SQLException;
 public class DeleteAdServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-            long adId = Long.parseLong(request.getParameter("id"));
-            DaoFactory.getAdsDao().delete(adId);
-            response.sendRedirect("/ads");
-        }
+        long adId = Long.parseLong(request.getParameter("id"));
+        DaoFactory.getAdsDao().delete(adId);
+        response.sendRedirect("/ads");
+    }
 
 }
 

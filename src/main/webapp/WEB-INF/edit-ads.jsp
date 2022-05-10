@@ -10,7 +10,7 @@
 <html>
 <head>
     <jsp:include page="/WEB-INF/partials/head.jsp">
-        <jsp:param name="title" value="Edit Ads" />
+        <jsp:param name="title" value="Edit Ads"/>
     </jsp:include>
     <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
@@ -22,15 +22,15 @@
     <form action="/edit-ads" method="post">
         <div class="form-group">
             <label for="image">Image</label>
-            <textarea id="image" name="image" class="form-control" type="text"></textarea>
+            <p><textarea id="image" name="image" class="form-control" type="text">${ad.image}</textarea></p>
         </div>
         <div class="form-group">
             <label for="title">Title</label>
-            <input id="title" name="title" class="form-control" type="text">
+            <p><textarea id="title" name="title" class="form-control" type="text">${ad.title}</textarea></p>
         </div>
         <div class="form-group">
             <label for="description">Description</label>
-            <textarea id="description" name="description" class="form-control" type="text"></textarea>
+            <p><textarea id="description" name="description" class="form-control" type="text">${ad.description}</textarea></p>
         </div>
         <input type="submit" class="btn btn-block btn-primary">
         <input type="hidden" name="id" value="${ad.id}">

@@ -57,9 +57,13 @@ public class Ad {
         this.userId = userId;
     }
 
-    public String getImage() { return image; }
+    public String getImage() {
+        return image;
+    }
 
-    public void setImage() { this.image = image; }
+    public void setImage() {
+        this.image = image;
+    }
 
     public String getTitle() {
         return title;

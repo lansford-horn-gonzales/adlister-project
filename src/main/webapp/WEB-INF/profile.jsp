@@ -5,8 +5,9 @@
     <jsp:include page="/WEB-INF/partials/head.jsp">
         <jsp:param name="title" value="Your Profile"/>
     </jsp:include>
-<%--    <link rel="stylesheet" type="text/css" href="css/main.css">--%>
+    <%--    <link rel="stylesheet" type="text/css" href="css/main.css">--%>
     <link rel="stylesheet" type="text/css" href="css/card.css">
+    <title></title>
 </head>
 <body>
 <jsp:include page="/WEB-INF/partials/login-navbar.jsp"/>
@@ -21,10 +22,10 @@
     <c:forEach var="ad" items="${ads}">
         <div class="card col-md-6">
             <div class="card-body">
-                <img class="card-img-top" src="${ad.image}" width="300" alt="unicorn">
+                <img class="card-img-top" src="${ad.image}" width="300" alt="unicorns">
                 <h4 class="card-title">${ad.title}</h4>
                 <p class="card-text">${ad.description}</p>
-<%--                <a href="#" class="card-link">Edit</a>--%>
+                    <%--                <a href="#" class="card-link">Edit</a>--%>
                 <form action="/ads/delete" method="post">
                     <input type="hidden" name="id" value="${ad.id}">
                     <button class="btn btn-danger">Delete</button>

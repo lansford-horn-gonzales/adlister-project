@@ -35,9 +35,9 @@ public class EditProfileServlet extends HttpServlet {
         User oldUser = (User) request.getSession().getAttribute("user");
 
 
-        User editUser = new User(oldUser.getId(),userName,email,oldUser.getPassword());
+        User editUser = new User(oldUser.getId(), userName, email, oldUser.getPassword());
         try {
-            DaoFactory.getUsersDao().editUser(oldUser,editUser);
+            DaoFactory.getUsersDao().editUser(oldUser, editUser);
         } catch (SQLException exception) {
             exception.printStackTrace();
         }

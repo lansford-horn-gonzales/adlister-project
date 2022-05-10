@@ -3,7 +3,7 @@
 <html>
 <head>
     <jsp:include page="/WEB-INF/partials/head.jsp">
-        <jsp:param name="title" value="Welcome to my site!" />
+        <jsp:param name="title" value="Welcome to my site!"/>
     </jsp:include>
 <%--    <link rel="stylesheet" type="text/css" href="css/main.css">--%>
     <link rel="stylesheet" type="text/css" href="css/card.css">
@@ -22,10 +22,10 @@
             <p class="card-text">${ad.description}</p>
 
 
-<%--            <form action="/show-ad" method="get">--%>
-<%--                <input type="hidden" name="show-ad" value="${ad.id}">--%>
+            <%--            <form action="/show-ad" method="get">--%>
+            <%--                <input type="hidden" name="show-ad" value="${ad.id}">--%>
 
-<%--            </form>--%>
+            <%--            </form>--%>
             <%--            <form action="/ads/delete" method="post">--%>
             <%--                <input type="hidden" name="id" value="${ad.id}">--%>
             <%--                <button class="btn btn-danger">Delete</button>--%>

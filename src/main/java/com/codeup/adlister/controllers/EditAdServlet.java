@@ -41,13 +41,21 @@ public class EditAdServlet extends HttpServlet {
         } catch (SQLException exception) {
             exception.printStackTrace();
         }
+
+
+        assert oldAd != null;
 //editing the old ad with a new ad by using the old ad id.
+
         Ad editAd = new Ad(oldAd.getId(), image, title, description);
         try {
             DaoFactory.getAdsDao().editAd(oldAd, editAd);
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
+        request.getSession().setAttribute("ad", editAd);
+        response.sendRedirect("/profile");
+
 //Getting the latest update from the database to display on the page.
         request.getSession().setAttribute("ad",editAd);
         response.sendRedirect("/ads");
